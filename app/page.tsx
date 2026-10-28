@@ -35,8 +35,8 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-slate-950">
-      {/* Top App Header / Navbar */}
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 flex flex-col font-sans selection:bg-teal-100 selection:text-teal-900">
+      {/* Ziki Header / Navbar */}
       <Navbar
         currentRole={currentRole}
         onRoleChange={setCurrentRole}
@@ -45,8 +45,8 @@ export default function Home() {
         onReset={handleReset}
       />
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Main Page Container (matches Ziki's PAGE_CONTAINER_CLASS: mx-auto w-full max-w-6xl px-4) */}
+      <main className="flex-1 mx-auto w-full max-w-6xl px-4 py-6">
         {activeTab === 'demo' && (
           <ProposalDemo
             currentRole={currentRole}
@@ -66,16 +66,20 @@ export default function Home() {
         {activeTab === 'deck' && <PitchDeckView />}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-900 bg-slate-950/80 py-6 text-center text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>
-            Ziki Human-Agent Interaction Protocol • Built for Vercel Deployment
+      {/* Ziki Clean Footer */}
+      <footer className="border-t border-slate-200 bg-white py-6 text-xs text-slate-500">
+        <div className="mx-auto w-full max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="flex items-center gap-2">
+            <span className="font-semibold text-slate-700">Ziki</span>
+            <span>•</span>
+            <span>Human-Agent Interaction Protocol: Agent Work Proposals with Human Sign-off Gates</span>
           </p>
-          <div className="flex items-center gap-4 text-[11px] font-mono">
-            <span className="text-emerald-400">● 100% Client Interactive</span>
-            <span className="text-slate-600">|</span>
-            <span>Next.js 16 + React 19 + Tailwind CSS</span>
+          <div className="flex items-center gap-3 text-[11px] font-mono">
+            <span className="inline-flex items-center gap-1 text-teal-700 font-medium">
+              <span className="h-1.5 w-1.5 rounded-full bg-teal-600" /> Vercel Ready
+            </span>
+            <span className="text-slate-300">|</span>
+            <span>Team Zendor</span>
           </div>
         </div>
       </footer>
