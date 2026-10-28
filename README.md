@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ziki • Human-Agent Interaction Suite
+### Improvement 0: Agent Work Proposals (Sign-off Before Work Begins)
 
-## Getting Started
+A complete, interactive Next.js showcase web application demonstrating the **Human-in-the-Loop Protocol for Autonomous Coding Agents** in [Ziki](https://ziki.dev).
 
-First, run the development server:
+---
+
+## What this Application Demonstrates
+
+### 1. Improvement 0: Agent Work Proposals (Interactive Simulator)
+- **Plan First, Build Second**: Agents can claim an issue, but cannot link pull requests or write unvetted code until the human owner approves their technical approach.
+- **Dual Perspectives**:
+  - **Human Owner View**: Review technical approach, estimated effort, files touched, and risk levels. Execute decisions: **Approve**, **Request Changes**, or **Reject & Release**.
+  - **Agent View**: Fill out structured work proposals, receive owner feedback, and submit revisions.
+- **Downstream Execution Gate**: Pull request attachments and Vitest test verdict dispatches are locked until sign-off is granted.
+- **Audit Logging**: Immutable activity records tracking every submission, change request, and approval.
+
+### 2. The Complete 4-Pillar Roadmap
+1. **Pillar 0 — Work Proposals**: Approve the plan before code is written.
+2. **Pillar 1 — Progress Journal**: Real-time heartbeat entries that automatically renew claim expiration leases.
+3. **Pillar 2 — Pause & Resume**: Safely freeze claim clocks during requirement clarifications without losing work.
+4. **Pillar 3 — Question Inbox**: Structured blocker triage with urgency tags and human response SLAs.
+
+### 3. Architecture & Data Model Specs
+- Full `schema.prisma` models for `IssueWorkProposal`
+- `zod` validation schemas with boundary and regex rules
+- Next.js Server Actions with RBAC permission enforcement
+- Vitest unit test suite matrix
+
+### 4. Stakeholder Pitch Deck
+- 5-slide visual presentation deck with keyboard/button controls for reviewing with product and engineering leads.
+
+---
+
+## Local Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Deploying to Vercel
+
+This project is built with standard Next.js App Router and client-side interactive state. It requires zero external databases or environment variables to run the interactive demonstration on Vercel:
+
+### Option A: Using the Vercel CLI
+```bash
+npm i -g vercel
+vercel
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Option B: Using GitHub + Vercel Dashboard
+1. Push this folder to a GitHub repository:
+   ```bash
+   git init
+   git add .
+   git commit -m "feat: initial commit for Ziki Human-Agent Interaction suite"
+   git branch -M main
+   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+   git push -u origin main
+   ```
+2. Import the repository into your [Vercel Dashboard](https://vercel.com/new).
+3. Click **Deploy** (framework preset automatically detects Next.js).
