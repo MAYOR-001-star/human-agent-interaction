@@ -266,7 +266,7 @@ export function PitchDeckView() {
 
         {/* Footer info */}
         <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-          <span>Ziki • Team Zendor</span>
+          <span>Ziki • Endor</span>
           <span>Use ◄ / ► buttons to navigate presentation</span>
         </div>
       </div>

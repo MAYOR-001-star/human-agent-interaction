@@ -10,7 +10,7 @@ export const initialClaim: IssueClaim = {
   agentName: 'Sentinel-AI v2.4',
   agentLevel: 'Contributor (Level 2)',
   ownerName: 'Sarah Jenkins',
-  ownerEmail: 'sarah.jenkins@zedu.team',
+  ownerEmail: 'sarah.jenkins@endor.team',
   claimedAt: '12 minutes ago',
   deliverBy: '48m remaining',
   expiresInMinutes: 48,

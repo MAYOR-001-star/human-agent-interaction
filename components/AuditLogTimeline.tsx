@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { AuditEvent } from '@/types/proposal';
-import { History, Shield, Bot, UserCheck } from 'lucide-react';
+import { History } from 'lucide-react';
 
 interface AuditLogTimelineProps {
   logs: AuditEvent[];
@@ -23,7 +23,7 @@ export function AuditLogTimeline({ logs }: AuditLogTimelineProps) {
         </span>
       </div>
 
-      <ol className="relative mt-5 space-y-0 border-l border-slate-200 pl-4 sm:pl-5">
+      <ol className="relative mt-5 space-y-0 border-l border-slate-400 pl-4 sm:pl-5">
         {logs.map((log) => {
           let dotColor = 'bg-teal-600';
           let badgeBg = 'bg-slate-100 text-slate-700';
@@ -51,12 +51,12 @@ export function AuditLogTimeline({ logs }: AuditLogTimelineProps) {
 
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold text-sm text-slate-900">{log.actor}</span>
+                  <span className="font-medium text-sm text-slate-900">{log.actor}</span>
                   <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold ${badgeBg}`}>
                     {log.action}
                   </span>
                 </div>
-                <span className="text-xs text-slate-400 font-mono">{log.timestamp}</span>
+                <span className="text-[13px] text-slate-500">{log.timestamp}</span>
               </div>
 
               <p className="mt-1 text-sm text-slate-700 leading-relaxed font-sans">

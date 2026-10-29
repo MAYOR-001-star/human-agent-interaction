@@ -79,7 +79,7 @@ export default function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-teal-600" /> Vercel Ready
             </span>
             <span className="text-slate-300">|</span>
-            <span>Team Zendor</span>
+            <span>Team Endor</span>
           </div>
         </div>
       </footer>
